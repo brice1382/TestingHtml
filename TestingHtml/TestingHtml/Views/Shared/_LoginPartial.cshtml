@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNet.Identity
+@using TestingHtml.Models
+@using TestingHtml.Controllers
+@model LoginViewModel
+@{
+    var siteRegister = @Url.Action("Register", "Account");
+    var logIn = @Url.Action("Login", "Account");
+    var logOff = @Url.Action("LogOff", "Account");
+    var siteManage = @Url.Action("Index", "Manage");
+    var userName = ("Hello " + User.Identity.GetUserName() + "!");
+
+}
+@if (Request.IsAuthenticated)
+{
+    <div class="col-xs-9 col-sm-6 col-md-4">
+        <div id="header-top-second" class="clearfix">
+            <div class="header-top-dropdown text-right">
+                <form id="logoutForm" class="" role="form" style="margin:0" method="post" action="/Account/LogOff">
+                    @Html.AntiForgeryToken()
+                    <div class="btn-group">
+                        <a href="@siteManage"><i class="fa fa-user pr-10"></i>@userName</a>&nbsp;&nbsp;
+                    </div>
+                    <div class="btn-group">
+                        <a href="javascript:document.getElementById('logoutForm').submit()" type="button" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Log Off</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="col-xs-9 col-sm-6 col-md-4">
+        <div id="header-top-second" class="clearfix">
+            <div class="header-top-dropdown text-right">
+                <div class="btn-group">
+                    <a href="@siteRegister" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up</a>
+                </div>
+                <div class="btn-group">
+                    <a href="@logIn" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

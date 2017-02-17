@@ -1,0 +1,1034 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D561F229-4D5B-443D-B422-8C518E68F1D3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestingHtml</RootNamespace>
+    <AssemblyName>TestingHtml</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="extras.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="RareUp\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="RareUp\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="RareUp\bootstrap\css\bootstrap.css" />
+    <Content Include="RareUp\bootstrap\css\bootstrap.min.css" />
+    <Content Include="RareUp\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="RareUp\bootstrap\js\bootstrap.js" />
+    <Content Include="RareUp\bootstrap\js\bootstrap.min.js" />
+    <Content Include="RareUp\bootstrap\js\npm.js" />
+    <Content Include="RareUp\css\animate.css" />
+    <Content Include="RareUp\css\animations.css" />
+    <Content Include="RareUp\css\custom.css" />
+    <Content Include="RareUp\css\print-invoice.css" />
+    <Content Include="RareUp\css\skins\blue.css" />
+    <Content Include="RareUp\css\skins\brown.css" />
+    <Content Include="RareUp\css\skins\cool_green.css" />
+    <Content Include="RareUp\css\skins\dark_cyan.css" />
+    <Content Include="RareUp\css\skins\dark_red.css" />
+    <Content Include="RareUp\css\skins\gold.css" />
+    <Content Include="RareUp\css\skins\gray.css" />
+    <Content Include="RareUp\css\skins\green.css" />
+    <Content Include="RareUp\css\skins\light_blue.css" />
+    <Content Include="RareUp\css\skins\orange.css" />
+    <Content Include="RareUp\css\skins\pink.css" />
+    <Content Include="RareUp\css\skins\purple.css" />
+    <Content Include="RareUp\css\skins\red.css" />
+    <Content Include="RareUp\css\skins\vivid_red.css" />
+    <Content Include="RareUp\css\style.css" />
+    <Content Include="RareUp\email_templates\email_template_blue.html" />
+    <Content Include="RareUp\email_templates\email_template_brown.html" />
+    <Content Include="RareUp\email_templates\email_template_cool_green.html" />
+    <Content Include="RareUp\email_templates\email_template_dark_cyan.html" />
+    <Content Include="RareUp\email_templates\email_template_dark_red.html" />
+    <Content Include="RareUp\email_templates\email_template_gold.html" />
+    <Content Include="RareUp\email_templates\email_template_gray.html" />
+    <Content Include="RareUp\email_templates\email_template_green.html" />
+    <Content Include="RareUp\email_templates\email_template_light_blue.html" />
+    <Content Include="RareUp\email_templates\email_template_orange.html" />
+    <Content Include="RareUp\email_templates\email_template_pink.html" />
+    <Content Include="RareUp\email_templates\email_template_purple.html" />
+    <Content Include="RareUp\email_templates\email_template_red.html" />
+    <Content Include="RareUp\email_templates\email_template_vivid_red.html" />
+    <Content Include="RareUp\email_templates\images\banner.png" />
+    <Content Include="RareUp\email_templates\images\facebook-icon.png" />
+    <Content Include="RareUp\email_templates\images\fax-icon.png" />
+    <Content Include="RareUp\email_templates\images\feature-icon-1.png" />
+    <Content Include="RareUp\email_templates\images\feature-icon-2.png" />
+    <Content Include="RareUp\email_templates\images\feature-icon-3.png" />
+    <Content Include="RareUp\email_templates\images\feature-icon-4.png" />
+    <Content Include="RareUp\email_templates\images\googleplus-icon.png" />
+    <Content Include="RareUp\email_templates\images\linkedin-icon.png" />
+    <Content Include="RareUp\email_templates\images\logo_blue.png" />
+    <Content Include="RareUp\email_templates\images\logo_brown.png" />
+    <Content Include="RareUp\email_templates\images\logo_cool_green.png" />
+    <Content Include="RareUp\email_templates\images\logo_dark_cyan.png" />
+    <Content Include="RareUp\email_templates\images\logo_dark_red.png" />
+    <Content Include="RareUp\email_templates\images\logo_gold.png" />
+    <Content Include="RareUp\email_templates\images\logo_gray.png" />
+    <Content Include="RareUp\email_templates\images\logo_green.png" />
+    <Content Include="RareUp\email_templates\images\logo_light_blue.png" />
+    <Content Include="RareUp\email_templates\images\logo_orange.png" />
+    <Content Include="RareUp\email_templates\images\logo_pink.png" />
+    <Content Include="RareUp\email_templates\images\logo_purple.png" />
+    <Content Include="RareUp\email_templates\images\logo_red.png" />
+    <Content Include="RareUp\email_templates\images\logo_vivid_red.png" />
+    <Content Include="RareUp\email_templates\images\mail-icon-white.png" />
+    <Content Include="RareUp\email_templates\images\mail-icon.png" />
+    <Content Include="RareUp\email_templates\images\marker-icon-white.png" />
+    <Content Include="RareUp\email_templates\images\marker-icon.png" />
+    <Content Include="RareUp\email_templates\images\phone-icon-white.png" />
+    <Content Include="RareUp\email_templates\images\phone-icon.png" />
+    <Content Include="RareUp\email_templates\images\project-1.jpg" />
+    <Content Include="RareUp\email_templates\images\project-2.jpg" />
+    <Content Include="RareUp\email_templates\images\project-3.jpg" />
+    <Content Include="RareUp\email_templates\images\project-4.jpg" />
+    <Content Include="RareUp\email_templates\images\service-1.jpg" />
+    <Content Include="RareUp\email_templates\images\service-2.jpg" />
+    <Content Include="RareUp\email_templates\images\service-3.jpg" />
+    <Content Include="RareUp\email_templates\images\service-4.jpg" />
+    <Content Include="RareUp\email_templates\images\skype-icon.png" />
+    <Content Include="RareUp\email_templates\images\team-member-1.png" />
+    <Content Include="RareUp\email_templates\images\team-member-2.png" />
+    <Content Include="RareUp\email_templates\images\team-member-3.png" />
+    <Content Include="RareUp\email_templates\images\team-member-4.png" />
+    <Content Include="RareUp\email_templates\images\testimonial.png" />
+    <Content Include="RareUp\email_templates\images\twitter-icon.png" />
+    <Content Include="RareUp\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="RareUp\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="RareUp\fonts\fontello\css\animation.css" />
+    <Content Include="RareUp\fonts\fontello\css\fontello-codes.css" />
+    <Content Include="RareUp\fonts\fontello\css\fontello-embedded.css" />
+    <Content Include="RareUp\fonts\fontello\css\fontello-ie7-codes.css" />
+    <Content Include="RareUp\fonts\fontello\css\fontello-ie7.css" />
+    <Content Include="RareUp\fonts\fontello\css\fontello.css" />
+    <Content Include="RareUp\fonts\fontello\demo.html" />
+    <Content Include="RareUp\fonts\fontello\font\fontello.svg" />
+    <Content Include="RareUp\fonts\fontello\LICENSE.txt" />
+    <Content Include="RareUp\fonts\fontello\README.txt" />
+    <Content Include="RareUp\images\agency-background-img-1.jpg" />
+    <Content Include="RareUp\images\agency-background-img-2.jpg" />
+    <Content Include="RareUp\images\agency-background-img-3.jpg" />
+    <Content Include="RareUp\images\agency-background-img-4.jpg" />
+    <Content Include="RareUp\images\avatar.jpg" />
+    <Content Include="RareUp\images\background-img-1.jpg" />
+    <Content Include="RareUp\images\background-img-10.jpg" />
+    <Content Include="RareUp\images\background-img-2.jpg" />
+    <Content Include="RareUp\images\background-img-3.jpg" />
+    <Content Include="RareUp\images\background-img-4.jpg" />
+    <Content Include="RareUp\images\background-img-5.jpg" />
+    <Content Include="RareUp\images\background-img-6.jpg" />
+    <Content Include="RareUp\images\background-img-7.jpg" />
+    <Content Include="RareUp\images\background-img-8.jpg" />
+    <Content Include="RareUp\images\background-img-9.jpg" />
+    <Content Include="RareUp\images\beauty-1.jpg" />
+    <Content Include="RareUp\images\beauty-2.jpg" />
+    <Content Include="RareUp\images\beauty-3.jpg" />
+    <Content Include="RareUp\images\beauty-4.jpg" />
+    <Content Include="RareUp\images\beauty-5.jpg" />
+    <Content Include="RareUp\images\beauty-6.jpg" />
+    <Content Include="RareUp\images\beauty-section-1.jpg" />
+    <Content Include="RareUp\images\beauty-slide-1.jpg" />
+    <Content Include="RareUp\images\beauty-slide-2.jpg" />
+    <Content Include="RareUp\images\blog-1.jpg" />
+    <Content Include="RareUp\images\blog-2.jpg" />
+    <Content Include="RareUp\images\blog-3.jpg" />
+    <Content Include="RareUp\images\blog-4.jpg" />
+    <Content Include="RareUp\images\blog-slide-1.jpg" />
+    <Content Include="RareUp\images\blog-slide-2.jpg" />
+    <Content Include="RareUp\images\blog-thumb-1.jpg" />
+    <Content Include="RareUp\images\blog-thumb-2.jpg" />
+    <Content Include="RareUp\images\blog-thumb-3.jpg" />
+    <Content Include="RareUp\images\blog-thumb-4.jpg" />
+    <Content Include="RareUp\images\cabinet.png" />
+    <Content Include="RareUp\images\category-1.jpg" />
+    <Content Include="RareUp\images\category-2.jpg" />
+    <Content Include="RareUp\images\category-3.jpg" />
+    <Content Include="RareUp\images\category-4.jpg" />
+    <Content Include="RareUp\images\category-5.jpg" />
+    <Content Include="RareUp\images\category-6.jpg" />
+    <Content Include="RareUp\images\client-1.png" />
+    <Content Include="RareUp\images\client-2.png" />
+    <Content Include="RareUp\images\client-3.png" />
+    <Content Include="RareUp\images\client-4.png" />
+    <Content Include="RareUp\images\client-5.png" />
+    <Content Include="RareUp\images\client-6.png" />
+    <Content Include="RareUp\images\client-7.png" />
+    <Content Include="RareUp\images\client-8.png" />
+    <Content Include="RareUp\images\construction-1.jpg" />
+    <Content Include="RareUp\images\construction-2.jpg" />
+    <Content Include="RareUp\images\construction-3.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-1-2.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-1-3.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-1.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-2.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-3.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-4.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-5.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-6.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-7.jpg" />
+    <Content Include="RareUp\images\construction-portfolio-8.jpg" />
+    <Content Include="RareUp\images\construction-service-1.jpg" />
+    <Content Include="RareUp\images\construction-service-2.jpg" />
+    <Content Include="RareUp\images\construction-service-3.jpg" />
+    <Content Include="RareUp\images\construction-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\construction-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\corporate-1-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\corporate-1-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\corporate-2-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\corporate-2-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\corporate-4-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\corporate-4-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\education-1.jpg" />
+    <Content Include="RareUp\images\education-2.jpg" />
+    <Content Include="RareUp\images\education-3.jpg" />
+    <Content Include="RareUp\images\education-4.jpg" />
+    <Content Include="RareUp\images\education-5.jpg" />
+    <Content Include="RareUp\images\education-6.jpg" />
+    <Content Include="RareUp\images\education-7.jpg" />
+    <Content Include="RareUp\images\education-8.jpg" />
+    <Content Include="RareUp\images\education-9.jpg" />
+    <Content Include="RareUp\images\education-about.jpg" />
+    <Content Include="RareUp\images\education-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\education-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\favicon.ico" />
+    <Content Include="RareUp\images\fullscreen-bg.jpg" />
+    <Content Include="RareUp\images\gallery-1.jpg" />
+    <Content Include="RareUp\images\gallery-2.jpg" />
+    <Content Include="RareUp\images\gallery-3.jpg" />
+    <Content Include="RareUp\images\gallery-4.jpg" />
+    <Content Include="RareUp\images\gallery-5.jpg" />
+    <Content Include="RareUp\images\gallery-6.jpg" />
+    <Content Include="RareUp\images\gym-background-img-1.jpg" />
+    <Content Include="RareUp\images\gym-background-img-2.jpg" />
+    <Content Include="RareUp\images\gym-slide-1.jpg" />
+    <Content Include="RareUp\images\gym-team-1.jpg" />
+    <Content Include="RareUp\images\gym-team-2.jpg" />
+    <Content Include="RareUp\images\gym-team-3.jpg" />
+    <Content Include="RareUp\images\gym-team-4.jpg" />
+    <Content Include="RareUp\images\hotel-banner.jpg" />
+    <Content Include="RareUp\images\hotel-image-1.jpg" />
+    <Content Include="RareUp\images\hotel-image-2.jpg" />
+    <Content Include="RareUp\images\hotel-image-3.jpg" />
+    <Content Include="RareUp\images\hotel-image-4.jpg" />
+    <Content Include="RareUp\images\hotel-service-1.jpg" />
+    <Content Include="RareUp\images\hotel-service-2.jpg" />
+    <Content Include="RareUp\images\hotel-service-3.jpg" />
+    <Content Include="RareUp\images\hotel-service-4.jpg" />
+    <Content Include="RareUp\images\landing-page-banner.jpg" />
+    <Content Include="RareUp\images\logistics-section-1.jpg" />
+    <Content Include="RareUp\images\logistics-service-1.jpg" />
+    <Content Include="RareUp\images\logistics-service-2.jpg" />
+    <Content Include="RareUp\images\logistics-service-3.jpg" />
+    <Content Include="RareUp\images\logistics-service-4.jpg" />
+    <Content Include="RareUp\images\logistics-slide-1.jpg" />
+    <Content Include="RareUp\images\logistics-slide-2.jpg" />
+    <Content Include="RareUp\images\logo_blue.png" />
+    <Content Include="RareUp\images\logo_brown.png" />
+    <Content Include="RareUp\images\logo_cool_green.png" />
+    <Content Include="RareUp\images\logo_dark_cyan.png" />
+    <Content Include="RareUp\images\logo_dark_red.png" />
+    <Content Include="RareUp\images\logo_gold.png" />
+    <Content Include="RareUp\images\logo_gray.png" />
+    <Content Include="RareUp\images\logo_green.png" />
+    <Content Include="RareUp\images\logo_light_blue.png" />
+    <Content Include="RareUp\images\logo_orange.png" />
+    <Content Include="RareUp\images\logo_pink.png" />
+    <Content Include="RareUp\images\logo_purple.png" />
+    <Content Include="RareUp\images\logo_red.png" />
+    <Content Include="RareUp\images\logo_vivid_red.png" />
+    <Content Include="RareUp\images\medical-blog-thumb-1.jpg" />
+    <Content Include="RareUp\images\medical-blog-thumb-2.jpg" />
+    <Content Include="RareUp\images\medical-blog-thumb-3.jpg" />
+    <Content Include="RareUp\images\medical-section-image-1.jpg" />
+    <Content Include="RareUp\images\medical-service-1.jpg" />
+    <Content Include="RareUp\images\medical-service-2.jpg" />
+    <Content Include="RareUp\images\medical-service-3.jpg" />
+    <Content Include="RareUp\images\medical-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\medical-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\medical-team-member-1.jpg" />
+    <Content Include="RareUp\images\medical-team-member-2.jpg" />
+    <Content Include="RareUp\images\medical-team-member-3.jpg" />
+    <Content Include="RareUp\images\medical-team-member-4.jpg" />
+    <Content Include="RareUp\images\page-about-1.jpg" />
+    <Content Include="RareUp\images\page-about-2.jpg" />
+    <Content Include="RareUp\images\page-about-3.jpg" />
+    <Content Include="RareUp\images\page-about-banner-1.jpg" />
+    <Content Include="RareUp\images\page-about-banner-2.jpg" />
+    <Content Include="RareUp\images\page-about-me-banner.jpg" />
+    <Content Include="RareUp\images\page-contact-banner.jpg" />
+    <Content Include="RareUp\images\page-portfolio-banner.jpg" />
+    <Content Include="RareUp\images\page-services-banner.jpg" />
+    <Content Include="RareUp\images\pattern-1.png" />
+    <Content Include="RareUp\images\pattern-2.png" />
+    <Content Include="RareUp\images\pattern-3.png" />
+    <Content Include="RareUp\images\pattern-4.png" />
+    <Content Include="RareUp\images\pattern-5.png" />
+    <Content Include="RareUp\images\pattern-6.png" />
+    <Content Include="RareUp\images\pattern-7.png" />
+    <Content Include="RareUp\images\pattern-8.png" />
+    <Content Include="RareUp\images\pattern-9.png" />
+    <Content Include="RareUp\images\portfolio-1-2.jpg" />
+    <Content Include="RareUp\images\portfolio-1-3.jpg" />
+    <Content Include="RareUp\images\portfolio-1-4.jpg" />
+    <Content Include="RareUp\images\portfolio-1-5.jpg" />
+    <Content Include="RareUp\images\portfolio-1.jpg" />
+    <Content Include="RareUp\images\portfolio-10.jpg" />
+    <Content Include="RareUp\images\portfolio-11.jpg" />
+    <Content Include="RareUp\images\portfolio-12.jpg" />
+    <Content Include="RareUp\images\portfolio-13.jpg" />
+    <Content Include="RareUp\images\portfolio-14.jpg" />
+    <Content Include="RareUp\images\portfolio-15.jpg" />
+    <Content Include="RareUp\images\portfolio-16.jpg" />
+    <Content Include="RareUp\images\portfolio-2.jpg" />
+    <Content Include="RareUp\images\portfolio-3.jpg" />
+    <Content Include="RareUp\images\portfolio-4.jpg" />
+    <Content Include="RareUp\images\portfolio-5.jpg" />
+    <Content Include="RareUp\images\portfolio-6.jpg" />
+    <Content Include="RareUp\images\portfolio-7.jpg" />
+    <Content Include="RareUp\images\portfolio-8.jpg" />
+    <Content Include="RareUp\images\portfolio-9.jpg" />
+    <Content Include="RareUp\images\portfolio-item-1-2.jpg" />
+    <Content Include="RareUp\images\portfolio-item-1-3.jpg" />
+    <Content Include="RareUp\images\portfolio-item-1-4.jpg" />
+    <Content Include="RareUp\images\portfolio-item-1-5.jpg" />
+    <Content Include="RareUp\images\portfolio-item-1.jpg" />
+    <Content Include="RareUp\images\portfolio-item-banner-1.jpg" />
+    <Content Include="RareUp\images\portfolio-item-banner-2.jpg" />
+    <Content Include="RareUp\images\portfolio-slider-slide-1.jpg" />
+    <Content Include="RareUp\images\portfolio-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\product-1-2.jpg" />
+    <Content Include="RareUp\images\product-1.jpg" />
+    <Content Include="RareUp\images\product-2.jpg" />
+    <Content Include="RareUp\images\product-3.jpg" />
+    <Content Include="RareUp\images\product-4.jpg" />
+    <Content Include="RareUp\images\product-5.jpg" />
+    <Content Include="RareUp\images\product-6.jpg" />
+    <Content Include="RareUp\images\product-7.jpg" />
+    <Content Include="RareUp\images\product-8.jpg" />
+    <Content Include="RareUp\images\rareUpcycle.png" />
+    <Content Include="RareUp\images\restaurant-background-img-1.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-1.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-10.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-11.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-12.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-2.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-3.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-4.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-5.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-6.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-7.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-8.jpg" />
+    <Content Include="RareUp\images\restaurant-dish-9.jpg" />
+    <Content Include="RareUp\images\restaurant-section-image-1.jpg" />
+    <Content Include="RareUp\images\restaurant-slider-slide-2.jpg" />
+    <Content Include="RareUp\images\resume-slide-1.jpg" />
+    <Content Include="RareUp\images\section-image-1.png" />
+    <Content Include="RareUp\images\section-image-2.png" />
+    <Content Include="RareUp\images\section-image-3.jpg" />
+    <Content Include="RareUp\images\section-image-3.png" />
+    <Content Include="RareUp\images\section-image-4.jpg" />
+    <Content Include="RareUp\images\section-image-5.jpg" />
+    <Content Include="RareUp\images\service-1.jpg" />
+    <Content Include="RareUp\images\service-2.jpg" />
+    <Content Include="RareUp\images\service-3.jpg" />
+    <Content Include="RareUp\images\service-4.jpg" />
+    <Content Include="RareUp\images\service-5.jpg" />
+    <Content Include="RareUp\images\service-6.jpg" />
+    <Content Include="RareUp\images\service-image-1.png" />
+    <Content Include="RareUp\images\shop-banner.jpg" />
+    <Content Include="RareUp\images\shop-slide-1.jpg" />
+    <Content Include="RareUp\images\shop-slide-2.jpg" />
+    <Content Include="RareUp\images\slider-boxed-slide-1.jpg" />
+    <Content Include="RareUp\images\slider-boxed-slide-2.jpg" />
+    <Content Include="RareUp\images\slider-fullscreen-slide-1.jpg" />
+    <Content Include="RareUp\images\slider-fullscreen-slide-2.jpg" />
+    <Content Include="RareUp\images\slider-fullscreen2-slide-1.jpg" />
+    <Content Include="RareUp\images\slider-fullscreen2-slide-2.jpg" />
+    <Content Include="RareUp\images\slider-fullwidth-slide-1.jpg" />
+    <Content Include="RareUp\images\slider-fullwidth-slide-2.jpg" />
+    <Content Include="RareUp\images\slider1.jpg" />
+    <Content Include="RareUp\images\slider2.jpg" />
+    <Content Include="RareUp\images\slider2.png" />
+    <Content Include="RareUp\images\team-member-1.jpg" />
+    <Content Include="RareUp\images\team-member-2.jpg" />
+    <Content Include="RareUp\images\team-member-3.jpg" />
+    <Content Include="RareUp\images\team-member-4.jpg" />
+    <Content Include="RareUp\images\testimonial-1.jpg" />
+    <Content Include="RareUp\images\testimonial-2.jpg" />
+    <Content Include="RareUp\images\testimonial-3.jpg" />
+    <Content Include="RareUp\images\wagon.png" />
+    <Content Include="RareUp\images\wedding-banner.jpg" />
+    <Content Include="RareUp\images\wedding-bride.jpg" />
+    <Content Include="RareUp\images\wedding-event-1.jpg" />
+    <Content Include="RareUp\images\wedding-event-2.jpg" />
+    <Content Include="RareUp\images\wedding-event-3.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-1-2.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-1.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-2.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-3.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-4.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-5.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-6.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-7.jpg" />
+    <Content Include="RareUp\images\wedding-gallery-8.jpg" />
+    <Content Include="RareUp\images\wedding-groom.jpg" />
+    <Content Include="RareUp\images\wedding-place-1.jpg" />
+    <Content Include="RareUp\js\coming.soon.config.js" />
+    <Content Include="RareUp\js\custom.js" />
+    <Content Include="RareUp\js\google.map.config.js" />
+    <Content Include="RareUp\js\template.js" />
+    <Content Include="RareUp\plugins\bootstrap-notify\bootstrap-notify.js" />
+    <Content Include="RareUp\plugins\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="RareUp\plugins\charts\Chart.js" />
+    <Content Include="RareUp\plugins\charts\Chart.min.js" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.css" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.js" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.min.css" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.min.js" />
+    <Content Include="RareUp\plugins\hover\hover-min.css" />
+    <Content Include="RareUp\plugins\hover\hover.css" />
+    <Content Include="RareUp\plugins\isotope\isotope.pkgd.js" />
+    <Content Include="RareUp\plugins\isotope\isotope.pkgd.min.js" />
+    <Content Include="RareUp\plugins\jasny-bootstrap\css\jasny-bootstrap.css" />
+    <Content Include="RareUp\plugins\jasny-bootstrap\css\jasny-bootstrap.min.css" />
+    <Content Include="RareUp\plugins\jasny-bootstrap\js\jasny-bootstrap.js" />
+    <Content Include="RareUp\plugins\jasny-bootstrap\js\jasny-bootstrap.min.js" />
+    <Content Include="RareUp\plugins\jquery.browser.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\countdownBasic.html" />
+    <Content Include="RareUp\plugins\jquery.countdown\countdownGlowing.gif" />
+    <Content Include="RareUp\plugins\jquery.countdown\countdownLED.png" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ar.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-bg.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-bn.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-bs.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ca.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-cs.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-cy.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-da.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-de.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-el.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-es.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-et.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-fa.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-fi.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-fo.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-fr.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-gl.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-gu.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-he.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-hr.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-hu.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-hy.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-id.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-is.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-it.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ja.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-kn.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ko.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-lt.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-lv.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ml.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ms.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-my.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-nb.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-nl.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-pl.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-pt-BR.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ro.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ru.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sk.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sl.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sq.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sr-SR.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sr.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-sv.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-th.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-tr.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-uk.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-ur.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-uz.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-vi.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-zh-CN.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown-zh-TW.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown.css" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.countdown.min.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.plugin.js" />
+    <Content Include="RareUp\plugins\jquery.countdown\jquery.plugin.min.js" />
+    <Content Include="RareUp\plugins\jquery.countTo.js" />
+    <Content Include="RareUp\plugins\jquery.js" />
+    <Content Include="RareUp\plugins\jquery.knob.min.js" />
+    <Content Include="RareUp\plugins\jquery.min.js" />
+    <Content Include="RareUp\plugins\jquery.parallax-1.1.3.js" />
+    <Content Include="RareUp\plugins\jquery.validate.js" />
+    <Content Include="RareUp\plugins\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="RareUp\plugins\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="RareUp\plugins\magnific-popup\magnific-popup.css" />
+    <Content Include="RareUp\plugins\modernizr.js" />
+    <Content Include="RareUp\plugins\morphext\morphext.css" />
+    <Content Include="RareUp\plugins\morphext\morphext.js" />
+    <Content Include="RareUp\plugins\morphext\morphext.min.js" />
+    <Content Include="RareUp\plugins\owl-carousel\AjaxLoader.gif" />
+    <Content Include="RareUp\plugins\owl-carousel\grabbing.png" />
+    <Content Include="RareUp\plugins\owl-carousel\owl.carousel.css" />
+    <Content Include="RareUp\plugins\owl-carousel\owl.carousel.js" />
+    <Content Include="RareUp\plugins\owl-carousel\owl.carousel.min.js" />
+    <Content Include="RareUp\plugins\owl-carousel\owl.theme.css" />
+    <Content Include="RareUp\plugins\owl-carousel\owl.transitions.css" />
+    <Content Include="RareUp\plugins\pace\LICENSE.txt" />
+    <Content Include="RareUp\plugins\pace\pace.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\coloredbg.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\gridtile.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\gridtile_3x3.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\gridtile_3x3_white.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\gridtile_white.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\loader.gif" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\fb.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\fr.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\ig.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\post.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\revolution_slide1.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\revolution_slide2.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\tw.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\vm.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\wc.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\assets\sources\yt.png" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\closedhand.cur" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\layers.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\ares.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\custom.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\dione.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\erinyen.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\gyges.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\hades.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\hebe.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\hephaistos.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\hermes.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\hesperiden.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\metis.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\persephone.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\uranus.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation-skins\zeus.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\navigation.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\openhand.cur" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\settings.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\revicons\revicons.svg" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\jquery.themepunch.enablelog.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\jquery.themepunch.tools.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\source\jquery.themepunch.enablelog.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\source\jquery.themepunch.revolution.js" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrowleft.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrowright.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_left.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_right.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\black50.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\bullet.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\bullets.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\bullets2.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\coloredbg.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\grain.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\gridtile.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\large_left.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\large_right.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\loader.gif" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\loader2.gif" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\navigdots.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\shadow1.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\shadow2.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\shadow3.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\small_left.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\small_right.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\timer.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\timerdot.png" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\transparent.jpg" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\white50.png" />
+    <Content Include="RareUp\plugins\rs-plugin\css\settings-ie8.css" />
+    <Content Include="RareUp\plugins\rs-plugin\css\settings.css" />
+    <Content Include="RareUp\plugins\rs-plugin\font\revicons.svg" />
+    <Content Include="RareUp\plugins\rs-plugin\images\decor_inside.png" />
+    <Content Include="RareUp\plugins\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="RareUp\plugins\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="RareUp\plugins\rs-plugin\images\gradient\g30.png" />
+    <Content Include="RareUp\plugins\rs-plugin\images\gradient\g40.png" />
+    <Content Include="RareUp\plugins\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <Content Include="RareUp\plugins\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="RareUp\plugins\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="RareUp\plugins\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="RareUp\plugins\slimscroll\jquery.slimscroll.js" />
+    <Content Include="RareUp\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="RareUp\plugins\SmoothScroll.js" />
+    <Content Include="RareUp\plugins\vide\jquery.vide.js" />
+    <Content Include="RareUp\plugins\vide\jquery.vide.min.js" />
+    <Content Include="RareUp\plugins\waypoints\jquery.waypoints.js" />
+    <Content Include="RareUp\plugins\waypoints\jquery.waypoints.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RareUp\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="RareUp\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="RareUp\bootstrap\css\bootstrap.css.map" />
+    <Content Include="RareUp\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="RareUp\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="RareUp\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="RareUp\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="RareUp\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="RareUp\fonts\fontello\config.json" />
+    <Content Include="RareUp\css\style.css.map" />
+    <Content Include="RareUp\less\10_full-page.less" />
+    <Content Include="RareUp\less\1_typography.less" />
+    <Content Include="RareUp\less\2_layout.less" />
+    <Content Include="RareUp\less\3_sections.less" />
+    <Content Include="RareUp\less\4_pages.less" />
+    <Content Include="RareUp\less\5_components.less" />
+    <Content Include="RareUp\less\6_navigations.less" />
+    <Content Include="RareUp\less\7_blocks-widgets.less" />
+    <Content Include="RareUp\less\8_main-slideshow.less" />
+    <Content Include="RareUp\less\9_owl-carousel.less" />
+    <Content Include="RareUp\less\mixins.less" />
+    <Content Include="RareUp\less\mixins\buttons.less" />
+    <Content Include="RareUp\less\mixins\center-block.less" />
+    <Content Include="RareUp\less\mixins\clearfix.less" />
+    <Content Include="RareUp\less\mixins\functions.less" />
+    <Content Include="RareUp\less\mixins\gradients.less" />
+    <Content Include="RareUp\less\mixins\hide-text.less" />
+    <Content Include="RareUp\less\mixins\opacity.less" />
+    <Content Include="RareUp\less\mixins\size.less" />
+    <Content Include="RareUp\less\mixins\vendor-prefixes.less" />
+    <Content Include="RareUp\less\skins\blue.less" />
+    <Content Include="RareUp\less\skins\brown.less" />
+    <Content Include="RareUp\less\skins\cool_green.less" />
+    <Content Include="RareUp\less\skins\dark_cyan.less" />
+    <Content Include="RareUp\less\skins\dark_red.less" />
+    <Content Include="RareUp\less\skins\gold.less" />
+    <Content Include="RareUp\less\skins\gray.less" />
+    <Content Include="RareUp\less\skins\green.less" />
+    <Content Include="RareUp\less\skins\light_blue.less" />
+    <Content Include="RareUp\less\skins\orange.less" />
+    <Content Include="RareUp\less\skins\pink.less" />
+    <Content Include="RareUp\less\skins\purple.less" />
+    <Content Include="RareUp\less\skins\red.less" />
+    <Content Include="RareUp\less\skins\vivid_red.less" />
+    <Content Include="RareUp\less\style.less" />
+    <Content Include="RareUp\less\variables.less" />
+    <Content Include="RareUp\php\email-sender.php" />
+    <Content Include="RareUp\plugins\charts\LICENSE.md" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.min.css.map" />
+    <Content Include="RareUp\plugins\fullpage\jquery.fullpage.min.js.map" />
+    <Content Include="RareUp\plugins\jasny-bootstrap\css\jasny-bootstrap.css.map" />
+    <Content Include="RareUp\plugins\jquery-1.12.2.min.map" />
+    <Content Include="RareUp\plugins\rs-plugin-5\css\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\font-awesome\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\css\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\pe-icon-7-stroke\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\revicons\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\revicons\revicons.eot" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\revicons\revicons.ttf" />
+    <Content Include="RareUp\plugins\rs-plugin-5\fonts\revicons\revicons.woff" />
+    <Content Include="RareUp\plugins\rs-plugin-5\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\extensions\source\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin-5\js\source\index.php" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\arrows.psd" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\bullets.psd" />
+    <Content Include="RareUp\plugins\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="RareUp\plugins\rs-plugin\font\revicons.eot" />
+    <Content Include="RareUp\plugins\rs-plugin\font\revicons.ttf" />
+    <Content Include="RareUp\plugins\rs-plugin\font\revicons.woff" />
+    <Content Include="RareUp\fonts\fontello\font\fontello.eot" />
+    <Content Include="RareUp\fonts\fontello\font\fontello.ttf" />
+    <Content Include="RareUp\fonts\fontello\font\fontello.woff" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="RareUp\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="RareUp\fonts\font-awesome\less\animated.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\core.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\icons.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\larger.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\list.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\mixins.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\path.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\stacked.less" />
+    <Content Include="RareUp\fonts\font-awesome\less\variables.less" />
+    <Content Include="RareUp\fonts\font-awesome\scss\font-awesome.scss" />
+    <None Include="Properties\PublishProfiles\rare.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\PlugIns\jquery.maskedinput.js" />
+    <Content Include="Scripts\PlugIns\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_TestingPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\App\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50041</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50041/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

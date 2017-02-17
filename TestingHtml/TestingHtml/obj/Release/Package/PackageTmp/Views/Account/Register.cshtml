@@ -1,0 +1,65 @@
+﻿@model TestingHtml.Models.RegisterViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="main-container dark-translucent-bg" style="background-image:url('/RareUp/images/background-img-6.jpg');">
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <div class="row">
+                <div class="main object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+                    <div style="background-color: #d3d3d3" class="form-block center-block p-30 border-clear">
+                        <h2 class="title">Sign Up</h2>
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <form class="form-horizontal" role="form">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <div class="form-group has-feedback">
+                                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                    <span class="text-danger small">*</span>
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    <i class="fa fa-envelope form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <div class="form-group has-feedback">
+                                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                    <span class="text-danger small">*</span>
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    <i class="fa fa-lock form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <div class="form-group has-feedback">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                                    <span class="text-danger small">*</span>
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                    <i class="fa fa-user form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" required> Accept our <a href="#">privacy policy</a> and <a href="#">customer agreement</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-default pull-left">Sign Up <i class="fa fa-check"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,73 @@
+﻿@using TestingHtml.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<h2 style="text-align: center">@ViewBag.Title</h2>
+<hr/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+            {
+                <div class="main-container dark-translucent-bg" style="background-image:url('/RareUp/images/background-img-6.jpg');">
+                    @Html.AntiForgeryToken()
+                    <div class="main object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+                        <div style="background-color: #d3d3d3" class="form-block center-block p-30 border-clear">
+                            <div class="container">
+                                <h2 class="title">Log In</h2>
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <form class="form-horizontal" role="form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group has-feedback">
+                                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                                <span class="text-danger small">*</span>
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                <i class="fa fa-envelope form-control-feedback"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group has-feedback">
+                                                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                                <span class="text-danger small">*</span>
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                <i class="fa fa-lock form-control-feedback"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" required> Accept our <a href="#">privacy policy</a> and <a href="#">customer agreement</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8">
+                                            <button type="submit" class="btn btn-default pull-left">Log In <i class="fa fa-check"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

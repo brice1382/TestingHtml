@@ -1,0 +1,72 @@
+﻿@model TestingHtml.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage Your Account";
+
+    var disableTwoFac = @Url.Action("DisableTwoFactorAuthentication", "Manage");
+    var enableTwoFac = @Url.Action("EnableTwoFactorAuthentication", "Manage");
+    var twoFactor = "Enable/Disable";
+}
+
+<h2 class="well" style="text-align: center">@ViewBag.Title</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <div class="container centered" style="width: 350px">
+    <h4>Change your account settings</h4>
+    <hr />
+        <dl class="dl-horizontal">
+            <dt>Password:</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+                {
+                    @Html.ActionLink("Change your password", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Create", "SetPassword")
+                }
+                ]
+            </dd>
+            <dt>External Logins:</dt>
+            <dd>
+                @Model.Logins.Count [
+                @Html.ActionLink("Manage", "ManageLogins") ]
+            </dd>
+
+            <dt>Phone Number:</dt>
+            <dd>
+                @(Model.PhoneNumber ?? "None")
+                @if (Model.PhoneNumber != null)
+                {
+                    <br />
+                    <p>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</p>
+                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <p>[<input type="submit" value="Remove" class="btn-link" />]</p>
+                    }
+                }
+                else
+                {
+                    <p>[&nbsp;&nbsp;@Html.ActionLink("Add Phone Number", "AddPhoneNumber")]</p>
+                }
+            </dd>
+
+            <dt>Two-Factor Authentication:</dt>
+            <dd>
+                @twoFactor<br />
+                @if (Model.TwoFactor && Model.PhoneNumber != null)
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="@disableTwoFac" type="submit" value="Disable" class="btn btn-link">Disabled</a>
+                }
+                else
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="@enableTwoFac" type="submit" value="Enable" class="btn btn-link">Enabled</a>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>

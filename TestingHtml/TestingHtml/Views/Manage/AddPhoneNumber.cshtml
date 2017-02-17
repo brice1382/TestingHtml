@@ -1,0 +1,45 @@
+﻿@model TestingHtml.Models.AddPhoneNumberViewModel
+@{
+    ViewBag.Title = "Phone Number";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+<style>
+    .spacer {
+        margin-top: 50px;
+    }
+
+    .spacer2 {
+        margin-bottom: 50px;
+    }
+</style>
+<div class="spacer"></div>
+<div class="container">
+    @using (Html.BeginForm("AddPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Add a phone number</h4>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                <hr />
+                <label class="control-label">@Html.LabelFor(m => m.Number):</label>
+                @Html.TextBoxFor(m => m.Number, new { @class = "form-control", id = "phone" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <input type="submit" class="btn btn-default" value="Submit" />
+            </div>
+        </div>
+    }
+</div>
+<div class="spacer2"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       $('#phone').mask($('(999) 999-9999'));
+    });
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

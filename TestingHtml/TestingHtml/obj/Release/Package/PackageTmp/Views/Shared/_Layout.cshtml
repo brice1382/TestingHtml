@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title RareUpCycle</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+    @{
+        var mySite = @Url.Action("Register", "Account");
+        var siteHome = @Url.Action("Index", "Home");
+    }
+
+    <!-- Custom RareUpCycle Html Code Start -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/RareUp/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="/RareUp/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Fontello CSS -->
+    <link href="/RareUp/fonts/fontello/css/fontello.css" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="/RareUp/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/RareUp/plugins/rs-plugin/css/settings.css" rel="stylesheet">
+    <link href="/RareUp/css/animations.css" rel="stylesheet">
+    <link href="/RareUp/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/RareUp/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="/RareUp/plugins/hover/hover-min.css" rel="stylesheet">
+
+    <!-- The Project core CSS file -->
+    <link href="/RareUp/css/style.css" rel="stylesheet">
+
+    <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
+    <link href="/RareUp/css/skins/light_blue.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link href="/RareUp/css/custom.css" rel="stylesheet">
+
+    <!-- Custom RareUpCycle Html Code Start -->
+
+</head>
+<body class="no-trans">
+
+    <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+    <div class="page-wrapper">
+        <div class="header-container">
+            <div class="header-top dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-6 col-md-8">
+                            <div class="header-top-first clearfix">
+                                <ul class="social-links circle small clearfix hidden-xs">
+                                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                                <ul class="list-inline hidden-sm hidden-xs">
+                                    <li><i class="fa fa-map-marker pr-5 pl-10"></i>48th Ave New Era, MI 49446</li>
+                                    <li><i class="fa fa-phone pr-5 pl-10"></i>616.557.3649</li>
+                                    <li><i class="fa fa-envelope-o pr-5 pl-10"></i> belmor5827@yahoo.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header fixed clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="header-left clearfix">
+                        <div class="header-dropdown-buttons visible-xs">
+                            <div class="btn-group dropdown">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+                                    <li>
+                                        <form role="search" class="search-box margin-clear">
+                                            <div class="form-group has-feedback">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <i class="icon-search form-control-feedback"></i>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropdown">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"></i><span class="cart-count default-bg"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
+                                    <li>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="quantity">QTY</th>
+                                                    <th class="product">Product</th>
+                                                    <th class="amount">Subtotal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="quantity"></td>
+                                                    <td class="product"><a href=""></a><span class="small"></span></td>
+                                                    <td class="amount"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="quantity"></td>
+                                                    <td class="product"><a href=""></a><span class="small"></span></td>
+                                                    <td class="amount"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="quantity"></td>
+                                                    <td class="product"><a href=""></a><span class="small"></span></td>
+                                                    <td class="amount"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="total-quantity" colspan="2"></td>
+                                                    <td class="total-amount"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="panel-body text-right">
+                                            <a href="shop-cart.html" class="btn btn-group btn-gray btn-sm">View Cart</a>
+                                            <a href="shop-checkout.html" class="btn btn-group btn-gray btn-sm">Checkout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- header dropdown buttons end-->
+                        <!--
+                        -- shop-product.html -- for the list of items in your cart
+                        -- shop-product.html --
+                        -- shop-product.html --
+                        -->
+                        <div id="logo" class="logo">
+                            <div class=""><span class="logo-font" style="color:#cdcdcd;font-size:25px;"><b style="color:#09afdf;">RARE&nbsp;</b> UpCycle</span></div>
+                            <!--<a href="../index.html"><img id="rareUpcycle.png" src="images/logo_light_blue.png" alt="Site "></a>-->
+                        </div>
+                        <div class="site-slogan">
+                            Yesterdays Treasures Designed For Today
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="header-right clearfix">
+                        <div class="main-navigation  animated with-dropdown-buttons">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="dropdown ">
+                                                <a href="@siteHome" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown ">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{PLACEHOLDERS}}</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{PLACEHOLDERS}}</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                            <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                    <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                    <li><a href="">{{PLACEHOLDERS}}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown active">
+                                                <a href="/RareUp/index-shop.html" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="index-shop.html">Main Sale</a></li>
+                                                    <li class="active"><a href="#">Mid-Century Mod</a></li>
+                                                    <li><a href="#">Flip</a></li>
+                                                    <li><a href="#">Furniture</a></li>
+                                                    <li><a href="#">Deals for You</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="header-dropdown-buttons hidden-xs ">
+                                            <div class="btn-group dropdown">
+                                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
+                                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+                                                    <li>
+                                                        <form role="search" class="search-box margin-clear">
+                                                            <div class="form-group has-feedback">
+                                                                <input type="text" class="form-control" placeholder="Search">
+                                                                <i class="icon-search form-control-feedback"></i>
+                                                            </div>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="btn-group dropdown">
+                                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"><!--<span class="cart-count default-bg"></span>--></i></button>
+                                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
+                                                    <li>
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="quantity">QTY</th>
+                                                                    <th class="product">Product</th>
+                                                                    <th class="amount">Subtotal</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="quantity">{{13}}</td>
+                                                                    <td class="product"><a href="shop-product.html"></a><span class="small">{{PLACEHOLDER}}</span></td>
+                                                                    <td class="amount">{{20.99}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="quantity">{{13}}</td>
+                                                                    <td class="product"><a href="shop-product.html"></a><span class="small">{{PLACEHOLDER}}</span></td>
+                                                                    <td class="amount">{{20.99}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="quantity">{{13}}</td>
+                                                                    <td class="product"><a href="shop-product.html"></a><span class="small">{{PLACEHOLDER}}</span></td>
+                                                                    <td class="amount">{{20.99}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="total-quantity" colspan="2">{{13}}</td>
+                                                                    <td class="total-amount">{{20.99}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="panel-body text-right">
+                                                            <a href="shop-cart.html" class="btn btn-group btn-gray btn-sm">View Cart</a>
+                                                            <a href="shop-checkout.html" class="btn btn-group btn-gray btn-sm">Checkout</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer id="footer" class="clearfix dark">
+        <div class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer-content">
+                                <div class="logo-footer"><span class="logo-font" style="color:#cdcdcd;font-size:25px;"><b style="color:#09afdf;">RARE&nbsp;</b> UpCycle</span></div>
+                                <p>This bottom section isnt really layout so much but more of a place to jam a few things so you can see them. It doesnt look that bad actually but it is a bit busy. Here would be a great spot for a google map to show them where you are.</p>
+                                <p>Below you can show customers the different payment options you offer. All of which BrainTree can handle very easily.</p>
+                                <div class="icons-block mt-10 mb-10">
+                                    <i class="fa fa-cc-paypal"></i>
+                                    <i class="fa fa-cc-amex"></i>
+                                    <i class="fa fa-cc-discover"></i>
+                                    <i class="fa fa-cc-mastercard"></i>
+                                    <i class="fa fa-cc-visa"></i>
+                                    <i class="fa fa-cc-stripe"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-content">
+                                <h2 class="title">My Account</h2>
+                                <div class="separator-2"></div>
+                                <nav class="mb-20">
+                                    <ul class="nav nav-pills nav-stacked list-style-icons">
+                                        <li><a href=""><i class="icon-tools"></i> Settings</a></li>
+                                        <li><a href=""><i class="icon-search"></i> My Orders</a></li>
+                                        <li><a href=""><i class="icon-basket-1"></i> Cart</a></li>
+                                        <li><a href=""><i class="icon-heart"></i> Wish List</a></li>
+                                        <li><a href=""><i class="icon-chat"></i> Notifications</a></li>
+                                        <li><a target="_blank" href=""><i class="icon-thumbs-up"></i> Support</a></li>
+                                        <li><a href="#"><i class="icon-lock"></i> Privacy</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-content">
+                                <h2 class="title">Latest Products</h2>
+                                <div class="separator-2"></div>
+                                <div class="row grid-space-10">
+                                    <div class="col-xs-6">
+                                        <div class="overlay-container mb-10">
+                                            <img src="/RareUp/images/cabinet.png" alt="">
+                                            <a href="" class="overlay-link small">
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="overlay-container mb-10">
+                                            <img src="/RareUp/images/wagon.png" alt="">
+                                            <a href="" class="overlay-link small">
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-xs-6">
+                                            <div class="overlay-container mb-10">
+                                                <img src="/RareUp/images/product-3.jpg" alt="">
+                                                <a href="" class="overlay-link small">
+                                                    <i class="fa fa-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="overlay-container mb-10">
+                                                <img src="/RareUp/images/product-4.jpg" alt="">
+                                                <a href="" class="overlay-link small">
+                                                    <i class="fa fa-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-content">
+                                <h2 class="title">Find Us</h2>
+                                <div class="separator-2"></div>
+                                <p>There is other content and stuff I have excluded to options are pretty endless. Maps, videos, all kinds of cool things. Go nuts</p>
+                                <ul class="social-links circle animated-effect-1">
+                                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="xing"><a target="_blank" href="http://www.xing.com"><i class="fa fa-xing"></i></a></li>
+                                </ul>
+                                <div class="separator-2"></div>
+                                <ul class="list-icons">
+                                    <li><i class="fa fa-map-marker pr-10 text-default"></i> 49446</li>
+                                    <li><i class="fa fa-phone pr-10 text-default"></i> 231.557.3649</li>
+                                    <li><a href="mailto:belmor5827@yahoo.com"><i class="fa fa-envelope-o pr-10"></i>belmor5827@yahoo.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="subfooter-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center">
+                                Copyright © @DateTime.Now.Year <i style="color: #09afdf">Spire</i> Technologies<a target="_blank" href="#"></a>. All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="~/Scripts/PlugIns/jquery.maskedinput.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+    <script type="text/javascript" src="/RareUp/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="/RareUp/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/modernizr.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/isotope/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/jquery.countTo.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/jquery.validate.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/vide/jquery.vide.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/jquery.browser.js"></script>
+    <script type="text/javascript" src="/RareUp/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="/RareUp/js/template.js"></script>
+    <script type="text/javascript" src="/RareUp/js/custom.js"></script>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
